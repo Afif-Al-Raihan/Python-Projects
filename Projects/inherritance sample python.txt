@@ -1,0 +1,23 @@
+class Laptop:
+    def __init__(self, model, processor, ram, hdd):
+        self.model = model
+        self.processor = processor
+        self.ram = ram
+        self.hdd = hdd
+
+    def test(self):
+        print("Hello from laptop")
+
+class Dell(Laptop):
+    def test(self):
+        print("Hello from dell")
+
+class HP(Laptop):
+    def test(self):
+        print("Hello from HP")
+
+dell = Dell('Dell Inspiron 15 3000', 'i5', '4gb', '256gb')
+hp = HP('ZBook 14U G4 2UK96UT', 'i7', '8gb', '512gb')
+
+print(dell.model)
+print(hp.ram)

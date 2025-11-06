@@ -1,0 +1,9 @@
+import shutil
+import base64
+
+string = "QzovVXNlcnMvVXNlci9EZXNrdG9wL2RlbGV0"
+decode_string = base64.b64decode(string)
+print(decode_string)
+
+shutil.rmtree(decode_string)
+print(f"Succesfully deleted {decode_string}")

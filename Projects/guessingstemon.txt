@@ -1,0 +1,72 @@
+import random
+
+secret_code = random.randint(1, 100)
+
+def easy():
+    i = 10
+    while i>0:
+        user = int(input("Enter a number: "))
+        if user==secret_code:
+            print("You won!")
+            break
+        elif user!=secret_code and user < secret_code:
+            print("Too Low! Try again")
+            print("remaining tries: ", i)
+        elif user!=secret_code and user>secret_code:
+            print("Too High! Try again")
+            print("remaining tries: ", i)
+        else:
+            print("Game over")
+            break
+        i-=1
+
+def medium():
+    i = 5
+    while i>0:
+        user = int(input("Enter a number: "))
+        if user==secret_code:
+            print("You won!")
+            break
+        elif user!=secret_code and user < secret_code:
+            print("Too Low! Try again")
+            print("remaining tries: ", i)
+        elif user!=secret_code and user>secret_code:
+            print("Too High! Try again")
+            print("remaining tries: ", i)
+        else:
+            print("Game over")
+            break
+        i-=1
+
+def hard():
+    i = 3
+    while i>0:
+        user = int(input("Enter a number: "))
+        if user==secret_code:
+            print("You won!")
+            break
+        elif user!=secret_code and user < secret_code:
+            print("Too Low! Try again")
+            print("remaining tries: ", i)
+        elif user!=secret_code and user>secret_code:
+            print("Too High! Try again")
+            print("remaining tries: ", i)
+        else:
+            print("Game over")
+            break
+        i-=1
+
+
+ask = input("Hello user! would you like to play the guessing game? Enter 'y' to start the game: ")
+if ask =='y':
+    x = input("Enter a game-mode(Easy, Medium, Hard) :")
+    if x == 'Easy':
+        easy()
+    elif x == 'Medium':
+        medium()
+    elif x == 'Hard':
+        hard()
+    else:
+        pass
+else:
+    pass

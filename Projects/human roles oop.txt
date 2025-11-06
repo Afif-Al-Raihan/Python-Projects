@@ -1,0 +1,28 @@
+class Human:
+    def task(self):
+        print("Humans needs does multiple tasks")
+
+class Work:
+    def task(self):
+        print("Humans needs to work to earn money")
+
+class Study:
+    def task(self):
+        print("Humans needs to study to stay updated")
+
+class Eat:
+    def task(self):
+        print("Humans needs to eat to stay alive")
+
+class Sleep:
+    def task(self):
+        print("Humans needs to sleep to get energy")
+
+human = Human()
+work = Work()
+study = Study()
+eat = Eat()
+sleep = Sleep()
+
+for human in(human, work, study, eat, sleep):
+    human.task()

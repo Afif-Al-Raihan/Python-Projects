@@ -1,0 +1,39 @@
+name = input("What is your name? ")
+print("Welcome " + name + " to Adventure game! You have to reach your home")
+
+#Game
+def quit():
+    pass
+
+def game():
+
+    #Game scenes
+    def bad_ending():
+        print("You have came to a village, and now you are trapped by the village people! Now you have to stay there forever")
+        print("You lost")
+    def ending1():
+        print("You have reached your home!")
+        print("Congratulation!")
+        print("Achievement completed:\nReach your home")
+    def scene():
+        print("There are two roads, left(ending 1) goes to your city and the right(ending 2) goes to the nearest village")
+        user = input("Left or Right: ")
+
+        if user == 'right':
+            bad_ending()
+        else:
+            ending1()
+
+    #Game conditions
+    user = input("You are on a dirt road, it has come to an end and you can go left or right.\n Which way would you like to go?")
+    if user == 'right':
+        scene()
+    else:
+        print("You chose the wrong road")
+        quit()
+
+req = input("Do you want to play the game? Type 'Yes' or 'No': ")
+if req == 'Yes':
+    game()
+else:
+    pass

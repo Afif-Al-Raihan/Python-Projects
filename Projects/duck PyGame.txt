@@ -1,0 +1,66 @@
+# import
+import pygame, sys, random
+
+pygame.init()  # initializing
+screen = pygame.display.set_mode((800, 600))
+
+clock = pygame.time.Clock()  # determine speed / frame rate of the game
+bg = pygame.image.load('Wood_BG.png')
+land = pygame.image.load('Land_BG.png')
+water = pygame.image.load('Water_BG.png')
+cloud1 = pygame.image.load('Cloud1.png')
+cloud2 = pygame.image.load('cloud2.png')
+crosshair = pygame.image.load('crosshair.png')
+duck = pygame.image.load('duck.png')
+land_pos_y = 500
+land_speed = 1
+water_pos_y = 500
+water_speed = 1
+game_font = pygame.font.Font(None, 70)
+text = game_font.render('You won!!', True, (255, 255, 255))
+text_rect = text.get_rect(center = (400, 300))
+ducks = []
+for i in range(10):
+    duck_postion_x = random.randrange(50, 750)
+    duck_postion_y = random.randrange(100, 550)
+    duck_rect = duck.get_rect(center=(duck_postion_x, duck_postion_y))
+    ducks.append(duck_rect)
+
+while True:  # game loop
+    for event in pygame.event.get():
+        # pygame starts looking for all the events
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    screen.blit(bg, (0, 0))
+    #land movement
+    land_pos_y += land_speed
+    if land_pos_y > 550 or land_pos_y <= 500:
+        land_speed *= -1
+    screen.blit(land, (0, land_pos_y))
+    water_pos_y += water_speed
+    if water_pos_y > 550 or water_pos_y <= 500:
+        water_speed *= -1
+
+    for duck_rect in ducks:
+        screen.blit(duck, duck_rect)
+
+    screen.blit(water, (0, water_pos_y))
+    screen.blit(cloud1, (2, 28))
+    screen.blit(cloud2, (200, 17))
+    screen.blit(cloud1, (400, 34))
+    screen.blit(cloud2, (600, 40))
+    if event.type==pygame.MOUSEMOTION:
+        cross_rect = crosshair.get_rect(center=pygame.mouse.get_pos())
+        screen.blit(crosshair, cross_rect)
+    if event.type==pygame.MOUSEBUTTONDOWN:
+        for index, duck_rect in enumerate(ducks):
+            if duck_rect.collidepoint(event.pos):
+                del ducks[index]
+
+    if len(ducks)==0:
+        screen.blit(text, text_rect)
+
+    pygame.display.update()
+    clock.tick(60)  # frame rate

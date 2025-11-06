@@ -1,0 +1,16 @@
+import random
+
+secret = random.randint(1, 25)
+guess = 0
+while guess < 5:
+  user = int(input("Enter number: "))
+  guess += 1
+  if user == secret:
+    print("You won")
+    break
+  elif guess == 5:
+    print("Game over! ")
+    print("The number was: ", secret)
+    break
+  else:
+    pass

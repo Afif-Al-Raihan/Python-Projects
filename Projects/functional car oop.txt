@@ -1,0 +1,24 @@
+class Car:
+    def __init__(self, model, color, engine, highest_speed, door, wheels, window):
+        self.model = model
+        self.color = color
+        self.engine = engine
+        self.higest_speed = highest_speed
+        self.door = door
+        self.wheels = wheels
+        self.window = window
+
+    def lights(self):
+        if self.model == "Toyota":
+            print("Lights on")
+        elif self.model == "BMW":
+            print("Lights off")
+        else:
+            print("Turn on the lights")
+
+car1= Car("Toyota", "White", "engine", 150, "Door", "Wheels", "Windows")
+car2 = Car("BMW", "White", "engine", 150, "Door", "Wheels", "Windows")
+car3 = Car("Corolla", "White", "engine", 150, "Door", "Wheels", "Windows")
+print(car1.lights())
+print(car2.lights())
+print(car3.lights())

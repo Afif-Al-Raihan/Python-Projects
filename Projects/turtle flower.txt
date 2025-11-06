@@ -1,0 +1,29 @@
+#import
+import turtle
+screen = turtle.Screen()
+turtle.title("Drawing")
+
+#turtle character setup
+turtle.reset()
+turtle.speed(10)
+
+#movements
+turtle.speed(10)
+for i in range(50):
+    turtle.forward(200)
+    turtle.right(110)
+
+turtle.reset()
+turtle.speed(10)
+for i in range(12):
+    turtle.forward(200)
+    turtle.right(150)
+
+turtle.reset()
+turtle.speed(10)
+for i in range(8):
+    turtle.forward(200)
+    turtle.right(180-180/4)
+#ending
+turtle.mainloop()
+screen.exitonclick()

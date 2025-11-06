@@ -1,0 +1,78 @@
+import pygame,random, sys
+
+pygame.init()  # initializing
+screen = pygame.display.set_mode((800, 800))
+screen.fill((0, 0, 0))
+pygame.display.set_caption("Ping Pong Game")
+
+clock = pygame.time.Clock()  # determine speed / frame rate of the game
+
+#Setup
+font = pygame.font.Font('freesansbold.ttf', 25)
+
+player_width = 20
+player_height = 130
+player_speed = 20
+
+player1_score = 0
+player2_score = 0
+
+player1_x_pos = 10
+player1_y_pos = 800/2 - player_height/2
+
+player2_x_pos = 800-player_width-10
+player2_y_pos = 800/2 - player_height/2
+
+player1_keyup = False
+player1_keydown = False
+player2_keyup = False
+player2_keydown = False
+
+time_delay = 30
+
+#ball setup
+ball_width = 15
+ball_height = 15
+
+ball_x_pos = 800/2
+ball_y_pos = 800/2
+
+#ball movement direction
+direction_list = [10, -10]
+
+ball_initiate_x = direction_list[random.randint(0, 1)]
+ball_initiate_y = 0
+
+#Objects
+player1 = pygame.draw.rect(screen, "white", (player1_x_pos, player1_y_pos, player_width, player_height))
+player2 = pygame.draw.rect(screen, "white", (player2_x_pos, player2_y_pos, player_width, player_height))
+ball = pygame.draw.circle(screen, "white", (ball_x_pos, ball_y_pos), ball_width)
+
+#score
+
+if player1_keyup:
+    player1_y_pos = max(player1_y_pos - player_speed, 0)
+elif player1_keydown:
+    player1_y_pos = min(player1_y_pos + player_speed, 800)
+elif player2_keyup:
+    player2_y_pos = max(player2_y_pos - player_speed, 0)
+elif player2_keydown:
+    player2_y_pos = min(player2_y_pos + player_speed, 800)
+
+inp = input(":")
+
+while True: #game loop
+
+    score1 = font.render('Score: ' + str(player1_score), True, "white")
+    score2 = font.render('Score: ',player2_score, True, "white")
+    screen.blit(score1, (200, 30))
+    screen.blit(score2, (500, 30))
+
+    for event in pygame.event.get():
+        #pygame starts looking for all the events
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    pygame.display.update()
+    clock.tick(60)  # frame rate

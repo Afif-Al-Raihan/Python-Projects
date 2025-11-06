@@ -1,0 +1,12 @@
+class Rectangle:
+    def __init__(self, length,width):
+        self.length = length
+        self.width = width
+
+    def calculate(self):
+        formula = self.length * self.width
+        print(formula)
+
+rectangle = Rectangle(5, 12)
+
+rectangle.calculate()

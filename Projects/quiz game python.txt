@@ -1,0 +1,22 @@
+print("Welcome! to quiz game")
+
+def game():
+    questions = {
+        "What is the capital of Bangladesh? ":"Dhaka",
+        "What is computer? ":"A device",
+        "What is the largest mammal in the world? ":"Blue Whale",
+        "How many planets are there in our solar system? ":"8",
+        "What is Asia? ":"A continent"
+    }
+    score = 0
+    for question in questions:
+        print(question)
+        user = input("Answer: ")
+
+        if user.lower() == questions[question].lower():
+            score+=1
+        else:
+            print("Wrong")
+    print(f"You score: {score}")
+
+game()

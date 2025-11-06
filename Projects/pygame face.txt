@@ -1,0 +1,39 @@
+import pygame, sys
+
+pygame.init()  # initializing
+screen = pygame.display.set_mode((800, 600))
+screen.fill((255, 255, 255))
+pygame.display.set_caption("Drawing")
+
+#Colors
+black = (0, 0, 0)
+white = (255, 255, 255)
+red = (255, 0, 0)
+green = (0, 255, 0)
+blue = (0, 0, 255)
+yellow = ('yellow')
+
+#Draw
+pygame.draw.line(screen, black, (250, 160), (450,160), 5)#Horizontal
+pygame.draw.line(screen, black, (450, 158), (450, 310), 5)#Vertical
+pygame.draw.line(screen, black, (250, 308), (450, 308), 5)#Horizontal
+pygame.draw.line(screen, black, (250, 158), (250, 310), 5)#Vertical
+
+pygame.draw.circle(screen, yellow, (350, 230), 50)
+
+pygame.draw.ellipse(screen, black, (360, 200, 20, 30))
+pygame.draw.ellipse(screen, black, (320, 200, 20, 30))
+pygame.draw.circle(screen, black, (350, 250), 15)
+
+
+clock = pygame.time.Clock()  # determine speed / frame rate of the game
+
+while True:  # game loop
+    for event in pygame.event.get():
+        # pygame starts looking for all the events
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    pygame.display.update()
+    clock.tick(60)  # frame rate

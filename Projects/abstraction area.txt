@@ -1,0 +1,24 @@
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class rectangle(Shape):
+    def area(self):
+        a = 12
+        b = 5
+        print("Rectangle area: ", a*b)
+
+class circle(Shape):
+    def area(self):
+        pi = 3.1415
+        r = 5
+        print("Circle area: ", pi*r*r)
+
+rect = rectangle()
+rect.area()
+
+circle = circle()
+circle.area()

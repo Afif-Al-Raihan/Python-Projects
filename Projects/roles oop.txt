@@ -1,0 +1,18 @@
+class Woman:
+    def woman(self):
+        print("This is Woman")
+
+class Mother:
+    def woman(self):
+        print("This is Mother")
+
+class Sister:
+    def woman(self):
+        print("This is Sister")
+
+w1 = Woman()
+w2 = Mother()
+w3 = Sister()
+
+for woman in(w1, w2, w3):
+    woman.woman()

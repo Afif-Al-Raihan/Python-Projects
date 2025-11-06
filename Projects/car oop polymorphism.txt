@@ -1,0 +1,28 @@
+class Buggati_Chiron():
+    def color(self):
+        print("Buggati Chiron Color: black and blue")
+
+    def engine(self):
+        print("Buggati Chiron Engine: Engine")
+
+    def horsepower(self):
+        print("Buggati Chiron horsepower: 1479")
+        print("--------------------------------------")
+
+class Koenigsegg_Jesko():
+    def color(self):
+        print("Koenigsegg Jesko Color: Color is red")
+
+    def engine(self):
+        print("Koenigsegg Jesko Engine: Engine")
+
+    def horsepower(self):
+        print("Koenigsegg Jesko horsepower: 1280")
+
+car1 = Buggati_Chiron()
+car2 = Koenigsegg_Jesko()
+
+for car in(car1, car2):
+    car.color()
+    car.engine()
+    car.horsepower()

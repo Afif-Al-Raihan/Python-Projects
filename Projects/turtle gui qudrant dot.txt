@@ -1,0 +1,46 @@
+import turtle
+screen = turtle.Screen()
+
+
+turtle.goto(0, 240)
+turtle.dot(5, 'green')
+turtle.penup()
+turtle.goto(140, 140)
+turtle.pendown()
+turtle.dot(100, 'red')
+turtle.penup()
+
+turtle.goto(0, 0)
+turtle.pendown()
+turtle.dot(5, 'green')
+
+turtle.goto(0, -240)
+turtle.dot(5, 'green')
+turtle.penup()
+turtle.goto(140, -140)
+turtle.pendown()
+turtle.dot(100, 'red')
+turtle.penup()
+turtle.goto(0, 0)
+
+turtle.pendown()
+turtle.goto(240, 0)
+turtle.dot(5, 'green')
+turtle.goto(0, 0)
+turtle.goto(-240, 0)
+turtle.dot(5, 'green')
+
+turtle.penup()
+turtle.goto(-140, 140)
+turtle.pendown()
+turtle.dot(100, 'red')
+turtle.penup()
+
+turtle.goto(-140, -140)
+turtle.pendown()
+turtle.dot(100, 'red')
+turtle.penup()
+turtle.goto(0, 0)
+
+
+screen.exitonclick()

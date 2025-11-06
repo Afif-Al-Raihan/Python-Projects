@@ -1,0 +1,32 @@
+import turtle
+screen = turtle.Screen()
+
+turtle.reset()
+turtle.speed(100)
+turtle.pensize(5)
+
+#triangle
+for i in range(3):
+    turtle.forward(100)
+    turtle.left(120)
+
+turtle.penup()
+turtle.forward(250)
+turtle.pendown()
+
+#pentagon
+for i in range(5):
+    turtle.left(72)
+    turtle.forward(72)
+
+turtle.penup()
+turtle.back(500)
+turtle.pendown()
+
+#hexagon
+for i in range(6):
+    turtle.left(60)
+    turtle.forward(100)
+
+turtle.mainloop()
+screen.exitonclick()

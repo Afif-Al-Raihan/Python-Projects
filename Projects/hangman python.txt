@@ -1,0 +1,43 @@
+import random
+
+lists = ["bangladesh", "computer", "football", "antartica", "america", "keyboard", "mouse", "internet", "phone", "ocean"]
+rand = random.choice(lists)
+
+print("Welcome to Hangman!")
+
+def show(words, guessed):
+    word = ''
+    for length in words:
+        if length == guessed:
+            word += '_'
+        else:
+            word += '_'
+    return word
+word_guess = rand
+guessed = []
+attempts = 0
+
+while True:
+    current = show(word_guess, guessed)
+    print(f"Word: {current}")
+    user = input("Guess a letter: ").lower()
+
+    if user in guessed:
+        print("You have guessed it earlier")
+    else:
+        guessed.append(user)
+
+        if user in word_guess:
+            print("Correct!")
+        else:
+            print("Wrong!")
+            attempts+=1
+
+
+    if attempts == 6:
+        print("Game over")
+        break
+
+    if '_' == word_guess:
+        print("Congratulations you Won!")
+        break

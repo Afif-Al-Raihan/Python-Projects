@@ -1,0 +1,76 @@
+"""
+import turtle
+import random
+
+screen = turtle.Screen()
+screen.title("Snake Game")
+screen.bgcolor('#A6C48A')
+screen.setup(width=700, height=700)
+screen.tracer(1)
+
+score = 0
+
+turtle.speed(10)
+turtle.shape('square')
+turtle.pensize(4)
+turtle.penup()
+turtle.goto(-300, 200)
+turtle.pendown()
+turtle.color('black')
+
+
+turtle.forward(600)
+turtle.right(90)
+turtle.forward(500)
+turtle.right(90)
+turtle.forward(600)
+turtle.right(90)
+turtle.forward(500)
+turtle.penup()
+turtle.hideturtle()
+
+
+fruit = turtle.Turtle()
+fruit.shape('circle')
+fruit.color('red')
+fruit.penup()
+fruit.goto(35, -30)
+
+snake = turtle.Turtle()
+snake.shape('square')
+snake.color('black')
+snake.penup()
+snake.goto(0, -30)
+
+scoring = turtle.Turtle()
+scoring.color('black')
+scoring.speed(0)
+scoring.penup()
+scoring.hideturtle()
+scoring.goto(0, 300)
+scoring.write("Score: ", font=('Courier', 20, 'italic'), align='center')
+scoring.hideturtle()
+
+
+old_fruit = turtle.Turtle()
+old_fruit.speed(0)
+old_fruit.shape('square')
+old_fruit.color('red')
+old_fruit.penup()
+
+
+for index in range(len(old_fruit)-1, 0, -1):
+    a = old_fruit[index-1].xcor()
+    b = old_fruit[index - 1].ycor()
+
+    old_fruit[index].goto(a, b)
+
+if len(old_fruit)>0:
+    a = snake.xcor()
+    b = snake.ycor()
+    old_fruit[0].goto(a, b)
+
+snake_move()
+
+turtle.mainloop()
+"""

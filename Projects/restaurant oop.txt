@@ -1,0 +1,23 @@
+class Restaurant:
+    def __init__(self, item):
+        self.item = item
+
+    def item_price(self):
+        if self.item == 'Beef Burger':
+            print("Your choice: " + self.item + " price: Tk250")
+        elif self.item == 'Chicken Burger':
+            print("Your choice: " + self.item + " price: Tk200")
+        elif self.item == 'Beef Pasta':
+            print("Your choice: " + self.item + " price: Tk170")
+        elif self.item == 'Chicken Pasta':
+            print("Your choice: " + self.item + " price: Tk150")
+        elif self.item == 'Chicken Pizza':
+            print("Your choice: " + self.item + " price: Tk300")
+        elif self.item == 'Beef Pizza':
+            print("Your choice: " + self.item + " price: Tk350")
+        else:
+            pass
+
+restaurant = Restaurant('Chicken Pasta')
+
+restaurant.item_price()

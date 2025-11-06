@@ -1,0 +1,11 @@
+#radius
+r=int(input("Enter radius: "))
+pi=22/7
+process = 2*r*pi
+print(process)
+#volume
+l = int(input("Enter length: "))
+b = int(input("Enter breadth: "))
+volume = 2*2*2
+process = l*b/volume
+print(process)

@@ -1,0 +1,26 @@
+import random
+
+print("Welcome to the Number Guessing Game!")
+
+max_num = int(input("Enter the highest number you want to guess up to: "))
+if max_num <= 0:
+    print("Please enter a positive number.")
+
+random_number = random.randint(1, max_num)
+
+attempt = 0
+guessed = 0
+
+while guessed != random_number:
+    guessed_number = int(input(f"Guess the number between 1 and {max_num}: "))
+    attempt += 1
+
+    if guessed_number < 1 or guessed_number > max_num:
+        print(f"Please guess a number between 1 and {max_num}.")
+    elif guessed_number < random_number:
+        print("Too low! Try again.")
+    elif guessed_number > random_number:
+        print("Too high! Try again.")
+    elif guessed_number == random_number:
+        print(f"Congrats! You guessed the number {random_number} in {attempt} attempts.")
+        break

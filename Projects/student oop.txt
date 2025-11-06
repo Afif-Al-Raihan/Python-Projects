@@ -1,0 +1,17 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Student(Person):
+    def __init__(self, name, age, section):
+        super().__init__(name, age)
+        self.section = section
+
+    def displaystudent(self):
+        print("Student Name: " + self.name)
+        print("Student Age: " + self.age)
+        print("Section: " + self.section)
+
+s1 = Student('Afif', '14', 'A')
+s1.displaystudent()

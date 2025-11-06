@@ -1,0 +1,19 @@
+q_variable = input("Enter algebra variable name: ")
+q_num = int(input("Enter algebra number: "))
+q_ope = input("Enter operator: ")
+q_num2 = int(input("Enter algebra number: "))
+q_num3 = int(input("Enter algebra number: "))
+
+add = q_num + q_num2
+sub = q_num - q_num2
+
+if q_ope == '+':
+  print(q_variable," = ", add, " = ", q_num3)
+elif q_ope == '-':
+  print(q_variable," = ", sub, " = ", q_num3)
+else:
+  print("Invalid")
+
+div = q_num3/add
+
+print(q_variable, " = ", div)

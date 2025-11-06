@@ -1,0 +1,21 @@
+class Polygon:
+    def __init__(self, length_a, length_b):
+        self.length_a = length_a
+        self.length_b = length_b
+
+    def area(self):
+        pass
+
+class Rectangle(Polygon):
+    def area(self):
+        print(self.length_a * self.length_b)
+
+class Triangle(Polygon):
+    def area(self):
+        print(0.5 * self.length_a * self.length_b)
+
+triangle = Triangle(5, 5)
+rectangle = Rectangle(12, 4)
+
+print(triangle.area())
+print(rectangle.area())

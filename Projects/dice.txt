@@ -1,0 +1,21 @@
+import random
+
+first = input("Type 'roll': ")
+second = input("Type 'roll': ")
+
+A = random.randint(1, 6)
+B = random.randint(1,6)
+
+if first == 'roll':
+  print("1st player : ", 1+A)
+if second == 'roll':
+  print("2nd player : ", 1+B)
+
+if A == B:
+  print("Tie")
+elif A > B:
+  print("1st wins")
+elif A < B:
+  print("2nd player wins")
+else:
+  pass

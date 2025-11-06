@@ -1,0 +1,39 @@
+import turtle
+screen = turtle.Screen()
+
+turtle.reset()
+turtle.speed(10)
+turtle.shape('turtle')
+turtle.setheading(90)
+
+def up():
+    turtle.forward(100)
+    turtle.setheading(90)
+
+def down():
+    turtle.back(100)
+    turtle.setheading(270)
+
+def right():
+    turtle.right(90)
+    turtle.setheading(0)
+
+def left():
+    turtle.left(90)
+    turtle.setheading(180)
+
+def clear():
+    turtle.clear()
+    turtle.penup()
+    turtle.goto(0, 0)
+    turtle.pendown()
+
+turtle.onkey(up, 'Up')
+turtle.onkey(down, 'Down')
+turtle.onkey(right, 'Right')
+turtle.onkey(left, 'Left')
+turtle.onkey(clear, 'space')
+
+turtle.listen()
+turtle.mainloop()
+screen.exitonclick()

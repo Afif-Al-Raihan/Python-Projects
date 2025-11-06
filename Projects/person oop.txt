@@ -1,0 +1,18 @@
+class Person:
+    def __init__(self, name, age, profession, address):
+        self.name = name
+        self.age = age
+        self.profession = profession
+        self.address = address
+
+    def display(self):
+        print("Name:" + self.name)
+        print("Age: " + self.age)
+        print("Profession: " + self.profession)
+        print("Address: " + self.address)
+
+p1 = Person('Tomas Wild', '37', 'Business Man', 'USA')
+p2 = Person('John Doe', '20', 'Student', 'Canada')
+
+p1.display()
+p2.display()
