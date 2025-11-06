@@ -1,3 +1,4 @@
+#Formula: ax = b +/- c
 q_variable = input("Enter algebra variable name: ")
 q_num = int(input("Enter algebra number: "))
 q_ope = input("Enter operator: ")
